@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -46,32 +49,38 @@
                 </div>
 
                 <div class="col-xl-3 col-lg-5 col-md-6 col-sm-12">
-                    <form class="form">
+                    <form class="form"  onsubmit="return validation()" >
                         <h3 class="mb-3">Sign up</h3>
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label fw-bold">Email or Phone Number</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          <span class="text-danger fw-bold" id="Emailerror"></span>
+                        <div class="mb-3" id="form-control">
+                            <label for="exampleInputEmail1" class="form-label fw-bold">Email or Phone Number</label>
+                            <input type="email"  class="form-control" id="exampleInputEmail1" 
+                                placeholder="Enter Your Email or Phone number" aria-describedby="emailHelp" required>
+                                
+                            <span class="text-danger fw-bold" id="Emailerror"></span>
                         </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
-                          <span class="text-danger fw-bold" id="passworderror"></span>
+                        <div class="mb-3" id="form-control">
+                            <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" 
+                                placeholder="Enter your password" required>
+                                
+                            <span class="text-danger fw-bold" id="passworderror"></span>
                         </div>
-                        <div class="mb-5">
+                        <div class="mb-5" id="form-control">
                             <label for="exampleInputPassword1" class="form-label fw-bold">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword2">
+                            <input type="password" class="form-control" id="exampleInputPassword2"
+                                placeholder="Confirm Your password" required>
+                                
                             <span class="text-danger fw-bold" id="cpassworderror"></span>
-                          </div>
-                          <div class="d-grid gap-2">
-                            <button class="btn btn-secondary mb-3" onclick="validation()" type="button">Sign-up</button>
-                            <button class="btn btn-secondary" onclick="call()"  type="button">Login</button>
-                          </div>
-                      </form>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button id="button2" class="btn btn-secondary mb-3"   type="submit">Sign-up</button>
+                            <button class="btn btn-secondary" onclick="call()" type="button">Login</button>
+                        </div>
+                    </form>
                 </div>
             </div>
     </section>
-<script src="signup.js"></script>
+    <script src="signup.js"></script>
 </body>
 
 </html>

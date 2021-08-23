@@ -1,40 +1,50 @@
-function validation(params) {
-   var email=document.getElementById("exampleInputEmail1").value;
-   var phonenumber=document.getElementById("exampleInputEmail1").value;
-   var password=document.getElementById("exampleInputPassword1").value;
-   var Confirmpassword=document.getElementById("exampleInputPassword2").value;
 
-  var emailcheck=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  var chkpassword=/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+
+
+
+
+function validation() {
+   let email=document.getElementById("exampleInputEmail1").value;
+   let phonenumber=document.getElementById("exampleInputEmail1").value;
+   let password=document.getElementById("exampleInputPassword1").value;
+   let Confirmpassword=document.getElementById("exampleInputPassword2").value;
+
+  let emailcheck=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  let passwordregex=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+ 
 
   if (emailcheck.test(email)) {
-      document.getElementById("exampleInputEmail1").innerHTML="";
+   document.getElementById("Emailerror").innerHTML=""
   }
   else{
-    document.getElementById("Emailerror").innerHTML="email is invalid";
+   document.getElementById("Emailerror").innerHTML="Invalid Email";
   }
- if (chkpassword.test(password))
- if (password===Confirmpassword) {
-    document.getElementById("passworderror").innerHTML="";
- }
- else{
+  if (passwordregex.test(password)) {
+    document.getElementById("passworderror").innerHTML=""
+   }
+   else{
+    document.getElementById("passworderror").innerHTML="Minimum eight characters, at least one letter and one number:";
+    return false;
+   }
+
+  if (password == Confirmpassword &&  password != null && Confirmpassword != null) {
+    alert("Form submitted Successfully");
+  } 
+  else {
     document.getElementById("cpassworderror").innerHTML="password dont match";
+    return false;
+  }
+
  }
- else{
-    document.getElementById("passworderror").innerHTML=
-    "passord shoud contain Minimum eight characters, at least one letter, one number and one special character:";
- }
-     
+ 
+
+ 
+
   
-
- if (emailcheck.test(email) && chkpassword.test(password) && password===Confirmpassword ) {
-    alert("form submitted")
- }
- else{
-     alert("fill the form again")
- }
-
-}
+        
 function call(params) {
     window.open('/Login.html', '_blank');
 }
+
