@@ -45,6 +45,6 @@ function validation() {
   
         
 function call(params) {
-    window.open('/Login.html', '_blank');
+    window.open('./Login.html', '_blank');
 }
 
